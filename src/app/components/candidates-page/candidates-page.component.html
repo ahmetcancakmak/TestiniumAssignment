@@ -1,0 +1,15 @@
+<input [(ngModel)]="filterText" type="text" class="form-control" placeholder="Search for...">
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Surname</th>
+    <th>Phone</th>
+    <th>Detail</th>
+  </tr>
+  <tr *ngFor="let data of userData | sort:'name' | filter:filterText;">
+    <td>{{data.name}}</td>
+    <td>{{data.username}}</td>
+    <td>{{data.phone}}</td>
+    <td><a routerLink="/data/detail/{{data.id}}">Detail</a></td>
+  </tr>
+</table>
